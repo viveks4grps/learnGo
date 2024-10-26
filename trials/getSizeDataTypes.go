@@ -61,7 +61,7 @@ func learnArrays() {
 		fmt.Printf("Index:%d is having:%d\n",index,item)
 	}
 
-	var initializedArray [5]int = [5]{1,2,3,4,5}
+	var initializedArray [5]int = [5]int{1,2,3,4,5}
 	for index,item := range initializedArray {
 		fmt.Printf("Index:%d is having:%d\n",index,item)
 	}
