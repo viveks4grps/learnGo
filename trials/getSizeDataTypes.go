@@ -96,6 +96,11 @@ func learnArrays() {
 	for index,item := range arrWithEllipsis {
 		fmt.Println("index:",index,"item:",item)
 	}
+	fmt.Println("Arrays are mutable")
+	arrWithEllipsis[1] = 5
+	for index,item := range arrWithEllipsis {
+		fmt.Println("index:",index,"item:",item)
+	}
 
 }
 
@@ -134,6 +139,15 @@ func exploreStrings() {
     for index,runeChar := range s {
 		fmt.Printf("Position:%d  Character: %c\n",index,runeChar)
 	}
+
+	//Strings are immutable
+	var immutableStr string = "STRING IS IMMUTABLE in GoLang"
+	fmt.Printf("Before mutation:%s\n", immutableStr)
+	//cannot assign to immutableStr[3] (neither addressable nor a map index expression)
+	/*
+	immutableStr[3] = "c"
+	fmt.Printf("After mutation:%s", immutableStr)
+	*/
 	
 
 }
