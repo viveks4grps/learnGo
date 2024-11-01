@@ -58,6 +58,9 @@ func main() {
 
 	//Test Strings
 	exploreStrings()
+
+	//Test Slices
+	learnSlices()
 }
 
 func learnArrays() {
@@ -150,4 +153,16 @@ func exploreStrings() {
 	*/
 	
 
+}
+
+func learnSlices() {
+	sli := []int {1, 2, 3}
+	for _,v := range sli {
+		fmt.Printf("Value in Slice:%d\n",v)
+	}
+	fmt.Printf("Type of sli:%T Sizeof sli:%d\n",sli,len(sli))
+	sli = append(sli,100)
+	fmt.Printf("After append, Sizeof sli:%d\n",len(sli))
+	arr := [3]int {1,2,3}
+	fmt.Printf("Type of arr:%T\n",arr)
 }
