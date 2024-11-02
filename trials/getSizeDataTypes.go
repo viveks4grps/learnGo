@@ -61,6 +61,12 @@ func main() {
 
 	//Test Slices
 	learnSlices()
+
+	//Test HashMaps
+	learnMaps()
+
+	//Test Struct (Structure)
+	learnStruct()
 }
 
 func learnArrays() {
@@ -70,6 +76,11 @@ func learnArrays() {
 	for index,item := range unsetArray {
 		fmt.Printf("Index:%d is having:%d\n",index,item)
 	}
+	//Without accessing the item inside the range expression
+	fmt.Println("Using a range Expression WITHOUT item:")
+	for index := range unsetArray {
+		fmt.Printf("Index:%d is having:%d\n",index,unsetArray[index])
+	}
 
 	//Another way of traversal using the normal for loop:
 	fmt.Println("Using a normal for loop for array traversal:")
@@ -78,6 +89,7 @@ func learnArrays() {
 	}
 
 	/*
+	ARRAY LITERAL using type + curly brackets
 	//syntax error: unexpected {, expected type
 	var arrayLiteralWithInferredType [2]int = [2]{3,4}
 	*/
@@ -165,4 +177,73 @@ func learnSlices() {
 	fmt.Printf("After append, Sizeof sli:%d\n",len(sli))
 	arr := [3]int {1,2,3}
 	fmt.Printf("Type of arr:%T\n",arr)
+}
+
+func learnMaps() {
+	//map is the implementation of HashMap in GoLang
+	//Exception 1: key is on the right of map, instead of being on the left, 
+	//             unlike in Array
+	var idMap map[string]int
+	idMap = make(map[string]int) // This is initialised as empty Map
+	fmt.Println("Lenght of idMap:",len(idMap))
+
+	//Add a new key to the map
+	idMap["jane"] = 456
+	fmt.Println("After Addition, lenght of idMap:",len(idMap))
+	fmt.Println("Value of 'jane'->", idMap["jane"])
+
+	//Remove a key value pair from the map
+	delete(idMap, "jane")
+	fmt.Println("After Removal, lenght of idMap:",len(idMap))
+	fmt.Println("Value of 'jane' after delete->", idMap["jane"])
+	
+	//Using Map Literal
+	mapLiteral := map[string]int {
+		"joe": 123}
+	fmt.Printf("Value of Key:'joe' in mapLiteral->%d\n",mapLiteral["joe"])
+
+	//Checking the presence of a key using 2 value assignment
+	id,present := mapLiteral["joe"]
+	fmt.Println("Value of Key:'joe' in mapLiteral->",id, "Is it present?:",present)
+	_,present2 := mapLiteral["IAMNOTAKEY"]
+	fmt.Println("Key:'IAMNOTAKEY' in mapLiteral:Is it present?:",present2)
+
+	//Iteration through a Map
+	fmt.Println("Iteration through a Map:")
+	for key,val := range mapLiteral {
+		fmt.Println(key,val)
+	}
+	//Only Values to be accessed?
+	fmt.Println("Values of a Map:")
+	for _,val := range mapLiteral {
+		fmt.Println(val)
+	}
+	//Only Keys to be accessed?
+	fmt.Println("Keys of a Map:")
+	for key,_ := range mapLiteral {
+		fmt.Println(key)
+	}
+
+
+}
+
+
+type Person struct  {
+	name string
+	addr string
+	phone string 
+}
+func learnStruct() {
+	// Empty structure
+	var p1 Person 
+	_ = p1
+
+	// Creation using new function. Empty structure
+	p2 := new(Person)  
+	_ = p2
+
+	//struct literal
+	p3 := Person{name: "joe", addr: "a st.", 
+	phone: "123" }
+	fmt.Println("p3:", p3)
 }
