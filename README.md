@@ -2,6 +2,7 @@ If you need to use SSH:
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
 In the above link, follow the steps:
+
 1> Generating a new SSH key
 
 2> Adding your SSH key to the ssh-agent
@@ -23,6 +24,7 @@ go run getSizeDataTypes.go hello.go scanner.go
 
 
 #####GIT Commands:
+
 git add .
 git commit -m "<Commit Message>"
 git status
