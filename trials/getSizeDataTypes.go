@@ -67,6 +67,10 @@ func main() {
 
 	//Test Struct (Structure)
 	learnStruct()
+
+	//Test multi-return Value Function
+	a,b,c := callFunc2(1,"STR2")
+	fmt.Printf("***Type of a:%T, Type of b:%T, Type of c:%T\n",a,b,c)
 }
 
 func learnArrays() {
@@ -246,4 +250,8 @@ func learnStruct() {
 	p3 := Person{name: "joe", addr: "a st.", 
 	phone: "123" }
 	fmt.Println("p3:", p3)
+}
+
+func callFunc2(x int, strPar string) (string, int, bool) {
+	return strPar+" STR3", x+1, true
 }
