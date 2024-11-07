@@ -11,6 +11,11 @@ func main() {
 	y := int64(123)
 	z := int32(123)
 	z1 := 123
+	/*syntax error: unexpected :=, expected =
+	//var xInt int := 4*/
+	xInt := 4
+	_ = xInt
+
 	f1 := float32(1234.0)
 	//Scientific notation
 	f2 := 1.2345e-2
@@ -53,6 +58,9 @@ func main() {
 	//Try Scan
 	//scanUserInput()
 
+	//Test For loops
+	learnForLoops()
+
 	//Test Arrays
 	learnArrays()
 
@@ -71,6 +79,26 @@ func main() {
 	//Test multi-return Value Function
 	a,b,c := callFunc2(1,"STR2")
 	fmt.Printf("***Type of a:%T, Type of b:%T, Type of c:%T\n",a,b,c)
+}
+
+func learnForLoops() {
+	for i:=0; i<10; i++ {
+		//Do something
+		//fmt.Println("For loop1")
+	}
+
+	i := 0
+	for i<10 {
+		//Do something
+		i++
+		//fmt.Println("For loop2")
+	}
+
+	for {
+		//fmt.Println("For loop3")
+		break
+	}
+
 }
 
 func learnArrays() {
