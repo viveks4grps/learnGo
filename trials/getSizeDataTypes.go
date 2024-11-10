@@ -11,6 +11,7 @@ func main() {
 	y := int64(123)
 	z := int32(123)
 	z1 := 123
+	var z2 = 2
 	/*syntax error: unexpected :=, expected =
 	//var xInt int := 4*/
 	xInt := 4
@@ -26,6 +27,7 @@ func main() {
 	fmt.Printf("y: %T :%d bytes\n",y,unsafe.Sizeof(y))
 	fmt.Printf("z: %T :%d bytes\n",z,unsafe.Sizeof(z))
 	fmt.Printf("z1: %T :%d bytes\n",z1, unsafe.Sizeof(z1))
+	fmt.Printf("z2: %T :%d bytes\n",z2, unsafe.Sizeof(z2))
 	fmt.Printf("f1: %T :%d bytes\n",f1, unsafe.Sizeof(f1))
 	fmt.Printf("f2: %T :%d bytes\n",f2, unsafe.Sizeof(f2))
 	fmt.Printf("f2: %f\n",f2)
