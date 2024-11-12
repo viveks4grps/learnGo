@@ -17,6 +17,7 @@ func main() {
 	xInt := 4
 	_ = xInt
 
+	var f float64
 	f1 := float32(1234.0)
 	//Scientific notation
 	f2 := 1.2345e-2
@@ -28,6 +29,7 @@ func main() {
 	fmt.Printf("z: %T :%d bytes\n",z,unsafe.Sizeof(z))
 	fmt.Printf("z1: %T :%d bytes\n",z1, unsafe.Sizeof(z1))
 	fmt.Printf("z2: %T :%d bytes\n",z2, unsafe.Sizeof(z2))
+	fmt.Printf("f: %T :%d bytes\n",f, unsafe.Sizeof(f))
 	fmt.Printf("f1: %T :%d bytes\n",f1, unsafe.Sizeof(f1))
 	fmt.Printf("f2: %T :%d bytes\n",f2, unsafe.Sizeof(f2))
 	fmt.Printf("f2: %f\n",f2)
